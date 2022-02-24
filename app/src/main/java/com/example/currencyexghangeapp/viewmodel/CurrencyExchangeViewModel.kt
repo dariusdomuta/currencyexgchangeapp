@@ -13,9 +13,9 @@ import javax.inject.Inject
 @HiltViewModel
 class CurrencyExchangeViewModel @Inject constructor(private val currencyExchangeUseCase: CurrencyExchangeUseCase, private val errorApiHandler: ErrorApiHandler): RxViewModel() {
 
-    private var currencyExchangeLiveData: MutableLiveData<Event<Exchange>> = MutableLiveData()
+    private var currencyExchangeLiveData: MutableLiveData<Event<List<ExchangeDisplayableItem>>> = MutableLiveData()
 
-    fun observeForCurrencyExchange(): LiveData<Event<Exchange>> = currencyExchangeLiveData
+    fun observeForCurrencyExchange(): LiveData<Event<List<ExchangeDisplayableItem>>> = currencyExchangeLiveData
 
     fun getCurrencyExchange() {
         loadCurrencyExchange()
@@ -30,11 +30,19 @@ class CurrencyExchangeViewModel @Inject constructor(private val currencyExchange
             .defaultSchedulers()
             .subscribe({
                 sendHideLoadingEvent()
-                currencyExchangeLiveData.value = Event(it)
+                currencyExchangeLiveData.value = Event(it.toDisplayableItemsList())
             }, {
                 sendHideLoadingEvent()
                 sendErrorEvent(errorApiHandler.parseApiErrors(it).first().errorMessage)
             })
         )
     }
+
+    private fun Exchange.toDisplayableItemsList(): List<ExchangeDisplayableItem> {
+        return this.rates.map {
+            ExchangeDisplayableItem(it.from.name, it.to.name, it.rate)
+        }
+    }
 }
+
+data class ExchangeDisplayableItem(val baseCurrency: String, val destinationCurrency: String, val rate: Float)

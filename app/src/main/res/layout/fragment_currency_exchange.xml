@@ -20,13 +20,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/currencyExchange_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/currencyExchangeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/BU4"
             android:gravity="center"
-            tools:text="SDADASDAS"
+            tools:layout="@layout/item_currency_exchange"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

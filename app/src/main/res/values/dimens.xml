@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="BU0">1dp</dimen>
+    <dimen name="BU1">4dp</dimen>
+    <dimen name="BU2">8dp</dimen>
+    <dimen name="BU3">12dp</dimen>
+    <dimen name="BU4">16dp</dimen>
+    <dimen name="BU5">20dp</dimen>
+    <dimen name="BU6">24dp</dimen>
+    <dimen name="BU7">28dp</dimen>
+    <dimen name="BU8">32dp</dimen>
+    <dimen name="BU9">36dp</dimen>
+    <dimen name="BU10">40dp</dimen>
+    <dimen name="BU11">44dp</dimen>
+    <dimen name="BU12">48dp</dimen>
+    <dimen name="BU13">52dp</dimen>
+    <dimen name="BU14">56dp</dimen>
+    <dimen name="BU15">60dp</dimen>
+
+    <dimen name="text_size_xxsmall">8sp</dimen>
+    <dimen name="text_size_minuscule">10sp</dimen>
+    <dimen name="text_size_xtiny">12sp</dimen>
+    <dimen name="text_size_tiny">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="text_size_xslarge">26sp</dimen>
+    <dimen name="text_size_xsxlarge">36sp</dimen>
+    <dimen name="text_size_xxlarge">42sp</dimen>
+    <dimen name="text_size_xxxlarge">54sp</dimen>
+    <dimen name="text_size_splash">27sp</dimen>
+    <dimen name="text_size_pin">54sp</dimen>
+    <dimen name="details_preview_image_height">240dp</dimen>
+    <dimen name="star_icon_size">20dp</dimen>
+    <dimen name="back_button_size">40dp</dimen>
+    <dimen name="heart_icon_size">30dp</dimen>
+    <dimen name="rating_sepparator_height">24dp</dimen>
+    <dimen name="result_image_width">80dp</dimen>
+    <dimen name="result_image_height">110dp</dimen>
+    <dimen name="title_max_width">180dp</dimen>
+    <dimen name="result_max_description_width">240dp</dimen>
+    <dimen name="trending_card_width">160dp</dimen>
+    <dimen name="trending_card_height">260dp</dimen>
+    <dimen name="popcorn_icon_top_margin">120dp</dimen>
+    <dimen name="trending_movies_text_margin_top">260dp</dimen>
+</resources>

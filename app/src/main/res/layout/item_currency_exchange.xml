@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/BU3"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/baseCurrencyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/BU8"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="From: EUR" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/baseCurrencyTextInput"
+        android:layout_width="@dimen/BU15"
+        android:layout_height="@dimen/BU11"
+        android:layout_marginTop="@dimen/BU3"
+        app:layout_constraintEnd_toEndOf="@+id/baseCurrencyTextView"
+        app:layout_constraintStart_toStartOf="@+id/baseCurrencyTextView"
+        app:layout_constraintTop_toBottomOf="@+id/baseCurrencyTextView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/baseCurrencyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/BU4"
+            android:hint=""
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_xxlarge"
+            app:iconifiedByDefault="false" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/destinationCurrencyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/BU8"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/baseCurrencyTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="To: USD" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/destinationCurrencyTextInput"
+        android:layout_width="@dimen/BU15"
+        android:layout_height="@dimen/BU11"
+        android:layout_marginTop="@dimen/BU3"
+        app:layout_constraintEnd_toEndOf="@+id/destinationCurrencyTextView"
+        app:layout_constraintStart_toStartOf="@+id/destinationCurrencyTextView"
+        app:layout_constraintTop_toBottomOf="@+id/destinationCurrencyTextView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/destinationCurrencyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/BU4"
+            android:hint=""
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_xxlarge"
+            app:iconifiedByDefault="false" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/exchangeRateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/baseCurrencyTextInput"
+        app:layout_constraintEnd_toStartOf="@+id/destinationCurrencyTextInput"
+        app:layout_constraintStart_toEndOf="@+id/baseCurrencyTextInput"
+        app:layout_constraintTop_toTopOf="@+id/baseCurrencyTextInput"
+        tools:text="Exchange Rate: 1.48" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/BU0"
+        android:background="@color/black"
+        android:layout_marginTop="@dimen/BU3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baseCurrencyTextInput" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

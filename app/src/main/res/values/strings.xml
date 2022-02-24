@@ -4,4 +4,5 @@
     <string name="general_error_message">Something went wrong. Try again.</string>
     <string name="request_timeout_message_error">The request took too long, please try again.</string>
     <string name="no_internet_error">There is no Internet connection. Please check your settings.</string>
+    <string name="exchange_rate_text">Exchange Rate: %.2f</string>
 </resources>
