@@ -31,6 +31,10 @@ class CurrencyExchangeFragment: BaseFragment<FragmentCurrencyExchangeBinding>() 
         binding.currencyExchangeRecyclerView.adapter = adapter
 
         observeForCurrencyExchangeRates()
+    }
+
+    override fun onStart() {
+        super.onStart()
         viewModel.getCurrencyExchange()
     }
 
