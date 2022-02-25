@@ -104,4 +104,10 @@ dependencies {
     implementation "androidx.fragment:fragment:1.4.1"
     implementation "androidx.navigation:navigation-fragment:$navVersion"
     implementation "androidx.navigation:navigation-ui:$navVersion"
+
+    //Testing
+    implementation "junit:junit:4.12"
+    implementation "org.mockito.kotlin:mockito-kotlin:3.2.0"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
 }
