@@ -1,9 +1,7 @@
 package com.example.currencyexghangeapp.dependencies
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.net.ConnectivityManager
-import android.preference.PreferenceManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,12 +1,8 @@
 package com.example.currencyexghangeapp.util
 
-import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import com.google.android.material.textfield.TextInputLayout
 
 fun EditText.addSimpleTextChangeListener(listener: (String) -> Unit) {
     addTextChangedListener(object : TextWatcher {
