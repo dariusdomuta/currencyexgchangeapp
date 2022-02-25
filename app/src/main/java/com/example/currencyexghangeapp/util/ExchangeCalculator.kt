@@ -3,6 +3,11 @@ package com.example.currencyexghangeapp.util
 import com.example.currencyexghangeapp.repository.model.Exchange
 import java.util.*
 
+/**
+ * Receives an exchange object and maps it into a Graph structure. To compute the combined exchange rates
+ * it uses Dijkstra's algorithm for finding the shortest path in a graph, between two nodes. As the path
+ * is computed, the rates are multiplied towards the final value.
+ */
 class ExchangeCalculator(val exchange: Exchange) {
     private val graph = Graph()
 
