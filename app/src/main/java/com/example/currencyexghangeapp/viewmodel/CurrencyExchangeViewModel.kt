@@ -5,8 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import com.example.currencyexghangeapp.repository.api.ErrorApiHandler
 import com.example.currencyexghangeapp.repository.interactors.CurrencyExchangeUseCase
 import com.example.currencyexghangeapp.repository.model.Exchange
+import com.example.currencyexghangeapp.util.ExchangeCalculator
 import com.example.currencyexghangeapp.util.defaultSchedulers
-import com.example.currencyexghangeapp.viewmodel.Event.Event
+import com.example.currencyexghangeapp.viewmodel.event.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -39,8 +40,13 @@ class CurrencyExchangeViewModel @Inject constructor(private val currencyExchange
     }
 
     private fun Exchange.toDisplayableItemsList(): List<ExchangeDisplayableItem> {
-        return this.rates.map {
-            ExchangeDisplayableItem(it.from.name, it.to.name, it.rate)
+        return this.pairs.map {
+            val exchangeCalculator = ExchangeCalculator(this)
+
+            val baseCurrency = it.from
+            val destinationCurrency = it.to
+            val rate = exchangeCalculator.getExchangeRateBetween(baseCurrency.name, destinationCurrency.name)
+            ExchangeDisplayableItem(it.from.name, it.to.name, rate)
         }
     }
 }

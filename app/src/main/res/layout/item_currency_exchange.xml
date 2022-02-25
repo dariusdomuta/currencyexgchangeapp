@@ -18,8 +18,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/baseCurrencyTextInput"
+        style="@style/EditTextStyle"
         android:layout_width="@dimen/BU15"
-        android:layout_height="@dimen/BU11"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/BU3"
         app:layout_constraintEnd_toEndOf="@+id/baseCurrencyTextView"
         app:layout_constraintStart_toStartOf="@+id/baseCurrencyTextView"
@@ -29,18 +30,20 @@
             android:id="@+id/baseCurrencyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/BU4"
             android:hint=""
+            android:gravity="center"
+            android:textColor="@color/black"
             android:imeOptions="actionDone"
-            android:inputType="text"
+            android:inputType="numberDecimal"
             android:maxLines="1"
-            android:textSize="@dimen/text_size_xxlarge"
+            android:textSize="@dimen/text_size_tiny"
+            tools:text="test"
             app:iconifiedByDefault="false" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/destinationCurrencyTextView"
+        android:id="@+id/destinationCurrencyLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/BU8"
@@ -51,28 +54,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="To: USD" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/destinationCurrencyTextInput"
-        android:layout_width="@dimen/BU15"
-        android:layout_height="@dimen/BU11"
-        android:layout_marginTop="@dimen/BU3"
-        app:layout_constraintEnd_toEndOf="@+id/destinationCurrencyTextView"
-        app:layout_constraintStart_toStartOf="@+id/destinationCurrencyTextView"
-        app:layout_constraintTop_toBottomOf="@+id/destinationCurrencyTextView">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/destinationCurrencyEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/BU4"
-            android:hint=""
-            android:imeOptions="actionDone"
-            android:inputType="text"
-            android:maxLines="1"
-            android:textSize="@dimen/text_size_xxlarge"
-            app:iconifiedByDefault="false" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/destinationCurrencyValueTextView"
+        style="@style/EditTextStyle"
+        android:layout_width="@dimen/currencyExchange_valueTextView_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_border_black"
+        android:maxLines="1"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:clickable="false"
+        android:focusable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/exchangeRateTextView"
+        app:layout_constraintEnd_toEndOf="@+id/destinationCurrencyLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/destinationCurrencyLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/exchangeRateTextView" />
 
     <TextView
         android:id="@+id/exchangeRateTextView"
@@ -80,7 +76,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/baseCurrencyTextInput"
-        app:layout_constraintEnd_toStartOf="@+id/destinationCurrencyTextInput"
+        app:layout_constraintEnd_toStartOf="@+id/destinationCurrencyValueTextView"
         app:layout_constraintStart_toEndOf="@+id/baseCurrencyTextInput"
         app:layout_constraintTop_toTopOf="@+id/baseCurrencyTextInput"
         tools:text="Exchange Rate: 1.48" />

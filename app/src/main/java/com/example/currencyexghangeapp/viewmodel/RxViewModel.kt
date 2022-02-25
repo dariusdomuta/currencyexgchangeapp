@@ -3,7 +3,7 @@ package com.example.currencyexghangeapp.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.currencyexghangeapp.viewmodel.Event.Event
+import com.example.currencyexghangeapp.viewmodel.event.Event
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 

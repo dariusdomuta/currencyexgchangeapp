@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currencyexghangeapp.R
+import com.example.currencyexghangeapp.util.addSimpleTextChangeListener
 import com.example.currencyexghangeapp.viewmodel.ExchangeDisplayableItem
 import kotlinx.android.synthetic.main.item_currency_exchange.view.*
 
@@ -31,8 +32,15 @@ class CurrencyExchangesAdapter(val context: Context, private var exchangesList: 
     inner class ExchangeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(currentExchange: ExchangeDisplayableItem) {
             itemView.baseCurrencyTextView.text = currentExchange.baseCurrency
-            itemView.destinationCurrencyTextView.text = currentExchange.destinationCurrency
+            itemView.destinationCurrencyLabelTextView.text = currentExchange.destinationCurrency
             itemView.exchangeRateTextView.text = String.format(context.resources.getString(R.string.exchange_rate_text), currentExchange.rate)
+            itemView.destinationCurrencyValueTextView.text = context.resources.getString(R.string.default_conversion_value)
+
+            itemView.baseCurrencyEditText.addSimpleTextChangeListener {
+                val value = it.toFloatOrNull()
+                val conversion = (value ?: 0f) * currentExchange.rate
+                itemView.destinationCurrencyValueTextView.text = String.format("%.2f", conversion)
+            }
         }
     }
 }

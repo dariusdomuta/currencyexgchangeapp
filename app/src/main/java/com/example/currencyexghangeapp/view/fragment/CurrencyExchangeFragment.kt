@@ -14,10 +14,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CurrencyExchangeFragment: BaseFragment<FragmentCurrencyExchangeBinding>() {
 
-    companion object {
-        fun newInstance() = CurrencyExchangeFragment()
-    }
-
     private val viewModel: CurrencyExchangeViewModel by viewModels()
     private var adapter: CurrencyExchangesAdapter? = null
 
@@ -44,5 +40,11 @@ class CurrencyExchangeFragment: BaseFragment<FragmentCurrencyExchangeBinding>() 
                 adapter?.submitList(exchange)
             }
         })
+    }
+
+    override fun onStop() {
+        super.onStop()
+        viewModel.observeForCurrencyExchange().removeObservers(viewLifecycleOwner)
+        viewModel.clear()
     }
 }

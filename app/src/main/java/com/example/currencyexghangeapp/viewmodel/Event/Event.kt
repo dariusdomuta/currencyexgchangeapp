@@ -1,4 +1,4 @@
-package com.example.currencyexghangeapp.viewmodel.Event
+package com.example.currencyexghangeapp.viewmodel.event
 
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
